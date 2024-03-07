@@ -6,7 +6,7 @@
 	"scripts": {
 		"build": "webpack --config webpack.config.prod.js",
 		"build:site": "ELEVENTY_ENV=production npx eleventy",
-		"dev:assets": "webpack --config webpack.config.dev.js",
+		"dev:assets": "webpack --config webpack.config.dev.js --watch",
 		"dev:site": "ELEVENTY_ENV=development npx eleventy --serve"
 	},
 	"keywords": [

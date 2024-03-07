@@ -3,6 +3,7 @@
 .hero-section {
 	background: url('/dist/images/cosmos-hero-bg.jpeg') center/cover, no-repeat;
 	min-height: 100vh;
+	// position: relative;
 
 	.first-hero-wrap {
 		@include widthMixin();
@@ -12,6 +13,7 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
+			position: relative;
 
 			.masthead {
 				display: flex;
@@ -21,6 +23,17 @@
 				@include poppins-semibold;
 				line-height: $lineHeight;
 				max-width: 800px;
+			}
+
+			.animation-icon-wrap {
+				position: absolute;
+				top: 75%;
+
+				.fa-solid {
+					color: $color-light;
+					font-size: 2rem;
+					animation: bounce 1s infinite;
+				}
 			}
 		}
 	}
@@ -94,5 +107,17 @@
 				display: flex;
 			}
 		}
+	}
+}
+
+@keyframes bounce {
+	0%,
+	100% {
+		transform: translateY(0); /* Start and end position */
+	}
+	50% {
+		transform: translateY(
+			-20px
+		); /* Midpoint of the animation - arrow moves up */
 	}
 }
