@@ -1,18 +1,31 @@
 {
-  "name": "cosmos_web_project",
-  "version": "1.0.0",
-  "description": "luxury_transportation | party_bus",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "luxury_transportation",
-    "|",
-    "party_bus",
-    "|",
-    "nights_out"
-  ],
-  "author": "Victor Sky | victorskydotdev",
-  "license": "ISC"
+	"name": "cosmos_web_project",
+	"version": "1.0.0",
+	"description": "luxury_transportation | party_bus",
+	"main": "index.js",
+	"scripts": {
+		"build:assets": "webpack --config webpack.config.prod.js",
+		"build:site": "ELEVENTY_ENV=production npx eleventy",
+		"dev:assets": "webpack --config webpack.config.dev.js",
+		"dev:site": "ELEVENTY_ENV=development npx eleventy --serve"
+	},
+	"keywords": [
+		"luxury_transportation",
+		"party_bus",
+		"nights_out"
+	],
+	"author": "Victor Sky | victorskydotdev",
+	"license": "ISC",
+	"devDependencies": {
+		"@11ty/eleventy": "2.0.1",
+		"css-loader": "6.10.0",
+		"mini-css-extract-plugin": "2.8.1",
+		"sass": "1.71.1",
+		"sass-loader": "14.1.1",
+		"style-loader": "3.3.4",
+		"terser-webpack-plugin": "5.3.10",
+		"webpack": "5.90.3",
+		"webpack-cli": "5.1.4",
+		"webpack-merge": "5.10.0"
+	}
 }

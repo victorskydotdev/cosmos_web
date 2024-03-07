@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600;700&display=swap');
+
+*,
+*::before,
+*::after {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+// font family mixins
+@mixin poppins-regular() {
+	font-family: 'Poppins', sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+@mixin poppins-medium() {
+	font-family: 'Poppins', sans-serif;
+	font-weight: 500;
+	font-style: normal;
+}
+
+@mixin poppins-semibold() {
+	font-family: 'Poppins', sans-serif;
+	font-weight: 600;
+	font-style: normal;
+}
+
+@mixin poppins-bold() {
+	font-family: 'Poppins', sans-serif;
+	font-weight: 700;
+	font-style: normal;
+}
+
+html {
+	background: #000;
+	scroll-behavior: smooth;
+}
+
+body {
+	@include poppins-regular();
+}
+
+// basic element resets
+li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+// variables
+$lineHeight: 1.2;
+$primary-color: #318a4f;
+$color-light: #fff;
+$color-dark: #000;
+
+@mixin widthMixin() {
+	width: 90%;
+	margin: 0 auto;
+}
+
+@mixin btnstyle() {
+	padding: 1em 1.4em;
+	@include poppins-medium();
+	background: $primary-color;
+	border: none;
+	color: $color-light;
+	border-radius: 6px;
+	cursor: pointer;
+}
+
+@mixin headingMixin() {
+	font-size: 2em;
+	@include poppins-bold();
+	text-align: center;
+	color: $color-light;
+	margin-bottom: 2em;
+}
+
+@mixin glassBg() {
+	background: rgb(5, 5, 5);
+	background: linear-gradient(
+		315deg,
+		rgb(8, 8, 8) 15%,
+		rgba(0, 0, 0, 0.5088235123150823) 45%,
+		rgba(74, 74, 74, 1) 100%
+	);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+}

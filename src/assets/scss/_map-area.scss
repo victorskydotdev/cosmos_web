@@ -1,0 +1,54 @@
+@import 'resets';
+
+.map-section {
+	margin-bottom: 5em;
+
+	.container {
+		@include widthMixin();
+		padding: 2em 0;
+
+		.heading {
+			@include headingMixin();
+		}
+
+		.wrap {
+			display: grid;
+			gap: 3em;
+
+			.text-wrap {
+				max-width: 470px;
+				text-align: center;
+				margin: 0 auto;
+
+				.text {
+					color: $color-light;
+					margin-bottom: 1em;
+				}
+
+				.btn {
+					@include btnstyle();
+				}
+			}
+
+			.map-frame {
+				.map {
+					width: 100%;
+					border-radius: 20px;
+				}
+			}
+
+			@media screen and (min-width: 62em) {
+				display: flex;
+
+				.text-wrap {
+					width: 40%;
+					text-align: left;
+				}
+
+				.map-frame {
+					width: 60%;
+				}
+			}
+		}
+	}
+}

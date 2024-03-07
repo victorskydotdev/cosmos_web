@@ -1,0 +1,73 @@
+@import 'resets';
+
+.header {
+	position: absolute;
+	background: transparent;
+	width: 100%;
+
+	.container {
+		@include widthMixin();
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 1em 0;
+
+		.logo-wrap {
+			.brand-logo {
+				width: 80px;
+			}
+		}
+
+		.nav-links {
+			@include glassBg();
+			position: absolute;
+			top: 100%;
+			width: 90%;
+			min-height: 400px;
+			display: none;
+			gap: 2em;
+			text-align: center;
+			padding: 3em 0;
+			border-radius: 20px;
+
+			li {
+				.link {
+					color: #fff;
+				}
+			}
+		}
+
+		.show-nav {
+			display: grid;
+		}
+
+		.hamburger {
+			.icon {
+				width: 60px;
+				cursor: pointer;
+			}
+		}
+
+		@media screen and (min-width: 43em) {
+			.nav-links {
+				width: 60%;
+				right: 5%;
+			}
+		}
+
+		@media screen and (min-width: 62em) {
+			.nav-links {
+				all: unset;
+
+				display: flex;
+				width: 40%;
+
+				justify-content: space-between;
+			}
+
+			.hamburger {
+				display: none;
+			}
+		}
+	}
+}

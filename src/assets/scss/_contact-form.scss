@@ -1,0 +1,53 @@
+@import 'resets';
+
+.form-wrap {
+	display: flex;
+	justify-content: center;
+
+	.form {
+		@include widthMixin();
+
+		.grid-area {
+			display: grid;
+			gap: 1.5em;
+			margin-bottom: 2em;
+
+			.name-wrap,
+			.email-wrap,
+			.message-wrap {
+				input,
+				textarea {
+					width: 100%;
+					outline: none;
+					color: $primary-color;
+					border: solid 1px grey;
+					padding: 1em;
+					border-radius: 10px;
+					@include poppins-regular();
+				}
+
+				input {
+					background: transparent;
+					@include poppins-regular();
+				}
+
+				textarea {
+					min-height: 200px;
+					background: transparent;
+				}
+			}
+		}
+
+		.submit-btn {
+			@include btnstyle();
+		}
+
+		@media screen and (min-width: 43em) {
+			width: 60%;
+		}
+
+		@media screen and (min-width: 43em) {
+			width: 40%;
+		}
+	}
+}

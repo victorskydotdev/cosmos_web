@@ -1,0 +1,98 @@
+@import 'resets';
+
+.hero-section {
+	background: url('/dist/images/cosmos-hero-bg.jpeg') center/cover, no-repeat;
+	min-height: 100vh;
+
+	.first-hero-wrap {
+		@include widthMixin();
+
+		.first-section-wrap {
+			height: 700px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			.masthead {
+				display: flex;
+				color: #fff;
+				font-size: clamp(2vw, 60px, 12vw);
+				text-align: center;
+				@include poppins-semibold;
+				line-height: $lineHeight;
+				max-width: 800px;
+			}
+		}
+	}
+
+	.second-hero-wrap {
+		color: #fff;
+		display: grid;
+		gap: 4em;
+
+		.subtext-wrap {
+			.sub-heading {
+				margin-bottom: 1.5em;
+				max-width: 350px;
+				@include poppins-medium();
+			}
+
+			.booknow-btn {
+				@include btnstyle();
+			}
+		}
+
+		.cards-wrap {
+			display: grid;
+			gap: 1.5em;
+
+			.card {
+				width: 100%;
+				background: rgba(1, 2, 2, 0.548);
+				backdrop-filter: blur(10px);
+				-webkit-backdrop-filter: blur(10px);
+				height: 250px;
+				border-radius: 10px;
+				display: grid;
+				place-content: center;
+				place-content: center;
+				text-align: center;
+				gap: 3em;
+
+				.heading {
+					font-size: 1.3em;
+					@include poppins-bold();
+					text-transform: capitalize;
+				}
+
+				.btn {
+					@include btnstyle();
+					display: inline-block;
+					width: 120px;
+					white-space: nowrap;
+					text-align: center;
+					place-self: center;
+				}
+			}
+		}
+
+		@media screen and (min-width: 43em) {
+			display: flex;
+
+			.subtext-wrap {
+				width: 70%;
+				justify-content: space-between;
+			}
+
+			.cards-wrap {
+				width: 60%;
+			}
+		}
+
+		@media screen and (min-width: 62em) {
+			.cards-wrap {
+				display: flex;
+			}
+		}
+	}
+}

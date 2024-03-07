@@ -1,0 +1,60 @@
+@import 'resets';
+
+.footer-section {
+	background: rgb(1, 84, 40);
+	background: linear-gradient(
+		90deg,
+		rgba(1, 84, 40, 1) 0%,
+		rgba(0, 124, 56, 1) 25%,
+		rgba(114, 206, 126, 1) 48%,
+		rgba(1, 46, 45, 1) 72%,
+		rgba(1, 44, 43, 1) 100%
+	);
+	padding: 2em 0;
+
+	.container {
+		@include widthMixin();
+		background: rgba(1, 2, 2, 0.548);
+		backdrop-filter: blur(10px);
+		-webkit-backdrop-filter: blur(10px);
+		border-radius: 20px;
+		padding: 2em 2em;
+		color: $color-light;
+
+		.sitemap-wrap {
+			display: grid;
+			gap: 2em;
+			margin-bottom: 3em;
+
+			.logo-wrap {
+				.brand-logo {
+					width: 80px;
+				}
+			}
+
+			.company,
+			.legal-links {
+				h4 {
+					margin-bottom: 1.3em;
+				}
+
+				.wrap {
+					ul {
+						display: grid;
+						gap: 1.2em;
+						li {
+							.link {
+								color: $color-light;
+							}
+						}
+					}
+				}
+			}
+
+			@media screen and (min-width: 62em) {
+				display: flex;
+				justify-content: space-between;
+			}
+		}
+	}
+}
