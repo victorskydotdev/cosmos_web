@@ -1,0 +1,117 @@
+@import 'resets';
+
+.statements-section {
+	margin-bottom: 5em;
+	.parent-container {
+		min-height: 1000px;
+		width: 90%;
+		margin: 0 auto;
+		display: flex;
+		gap: 2em;
+
+		.position-sticky-scroll {
+			min-height: 300px;
+
+			width: 80%;
+			display: grid;
+			gap: 1.5em;
+
+			.statement-card {
+				background: rgb(53, 53, 53);
+				background: linear-gradient(
+					315deg,
+					rgba(53, 53, 53, 1) 15%,
+					rgba(0, 0, 0, 0.5088235123150823) 45%,
+					rgba(74, 74, 74, 1) 100%
+				);
+				backdrop-filter: blur(10px);
+				-webkit-backdrop-filter: blur(10px);
+				border-radius: 15px;
+				display: grid;
+				gap: 1.5em;
+				padding: 2em 2em;
+				margin-bottom: 3em;
+			}
+
+			.card {
+				max-width: 500px;
+				height: max-content;
+
+				padding: 3em;
+				color: $color-light;
+
+				.heading {
+					margin-bottom: 1em;
+					font-size: 30px;
+				}
+
+				.wrap {
+					display: flex;
+					gap: 2em;
+					flex-wrap: wrap;
+
+					.text {
+						background: rgb(53, 53, 53);
+						background: linear-gradient(
+							315deg,
+							rgba(53, 53, 53, 1) 15%,
+							rgba(0, 0, 0, 0.5088235123150823) 45%,
+							rgba(74, 74, 74, 1) 100%
+						);
+						backdrop-filter: blur(10px);
+						-webkit-backdrop-filter: blur(10px);
+						padding: 3em;
+						border-radius: 15px;
+						position: relative;
+						z-index: 0 !important;
+						display: grid;
+						gap: 1em;
+
+						.elipse-shape {
+							position: absolute;
+							width: 300px;
+							height: 250px;
+							top: -30px;
+							z-index: -2;
+
+							span {
+								position: relative;
+								z-index: 3;
+								display: block;
+							}
+
+							.text-heading {
+								@include poppins-bold();
+								font-weight: bold;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.position-sticky {
+			position: sticky;
+			top: 20px;
+			height: 300px;
+
+			width: 100%;
+			display: flex;
+			gap: 1em;
+
+			.card {
+				height: 300px;
+				width: 100%;
+				border-radius: 10px;
+
+				&:nth-child(1) {
+					background: url('/src/images/card-img1.jpeg') center/cover, no-repeat;
+				}
+
+				&:nth-child(2) {
+					background: url('/src/images/card-img2.jpeg') center/cover, no-repeat;
+				}
+			}
+		}
+	}
+}

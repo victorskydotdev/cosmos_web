@@ -57,9 +57,22 @@
 		}
 
 		.hamburger {
-			.icon {
-				width: 60px;
-				cursor: pointer;
+			button {
+				border-radius: 10px;
+			}
+			.open-btn {
+				background: $primary-color;
+				border: none;
+				padding: 1em;
+				color: $color-light;
+			}
+
+			.close-btn {
+				background: $primary-color;
+				border: none;
+				padding: 1em;
+				color: $color-light;
+				display: none;
 			}
 		}
 

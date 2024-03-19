@@ -1,0 +1,49 @@
+@import 'resets';
+
+.margin-top {
+	// margin-bottom: 10em;
+	height: 8em;
+}
+
+.about-section {
+	background: url('/src/images/about-bg.jpeg') center/cover, no-repeat;
+	height: 600px;
+	width: 100%;
+	position: relative;
+	margin-bottom: 7em;
+
+	&::before {
+		content: '';
+		position: absolute;
+		background: #000;
+		inset: 0;
+		opacity: 0.6;
+	}
+
+	.container {
+		@include widthMixin();
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+
+		.wrap {
+			position: relative;
+			z-index: 2;
+
+			.about-heading {
+				@include headingMixin();
+				position: relative;
+				z-index: 2;
+
+				margin-bottom: 0.4em;
+			}
+
+			.text {
+				color: $color-light;
+				max-width: 500px;
+				text-align: center;
+			}
+		}
+	}
+}
