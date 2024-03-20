@@ -40,6 +40,7 @@ html {
 
 body {
 	@include poppins-regular();
+	position: relative;
 }
 
 // basic element resets

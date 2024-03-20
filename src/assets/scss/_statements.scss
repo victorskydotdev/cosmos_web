@@ -8,6 +8,7 @@
 		margin: 0 auto;
 		display: flex;
 		gap: 2em;
+		// background: red;
 
 		.position-sticky-scroll {
 			min-height: 300px;
@@ -110,6 +111,56 @@
 
 				&:nth-child(2) {
 					background: url('/src/images/card-img2.jpeg') center/cover, no-repeat;
+				}
+			}
+		}
+
+		@media screen and (max-width: 64em) {
+			display: block;
+
+			.position-sticky-scroll {
+				width: 100%;
+
+				.statement-card {
+					width: 90%;
+					margin: 0 auto;
+					text-align: center;
+				}
+
+				.card {
+					max-width: unset;
+					text-align: center;
+				}
+			}
+
+			.position-sticky {
+				display: none;
+			}
+		}
+
+		@media screen and (max-width: 43em) {
+			display: block;
+
+			.position-sticky-scroll {
+				width: 100%;
+				margin: 0 auto;
+
+				.statement-card {
+					width: 100%;
+					margin: 0 auto;
+					text-align: justify;
+				}
+
+				.card {
+					max-width: unset;
+					text-align: center;
+					width: 100%;
+
+					padding: 1em;
+
+					.wrap {
+						width: 100%;
+					}
 				}
 			}
 		}

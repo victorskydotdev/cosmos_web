@@ -15,7 +15,7 @@
 		<!-- page title -->
 		<title>{{ title }}</title>
 	</head>
-	<body>
+	<body class="body">
 		<header class="header">
 			<div class="container">
 				<div class="logo-wrap">
@@ -59,6 +59,25 @@
 		</header>
 
 		{{ content | safe }}
+
+		<section class="booking-section-modal">
+			<button class="close-btn" id="modal-close-btn">
+				<i class="fa-solid fa-xmark"></i>
+			</button>
+
+			<div class="container">
+				<!-- Calendly inline widget begin -->
+				<div
+					class="calendly-inline-widget"
+					data-url="https://calendly.com/cosmoscoachesco/ride-booking-service?hide_gdpr_banner=1"
+					style="min-width: 320px; height: 700px"></div>
+				<script
+					type="text/javascript"
+					src="https://assets.calendly.com/assets/external/widget.js"
+					async></script>
+				<!-- Calendly inline widget end -->
+			</div>
+		</section>
 
 		<footer class="footer-section">
 			<div class="container">
@@ -107,7 +126,7 @@
 
 					<div class="contact-wrap">
 						<ul class="outbound-links">
-							<li><a href="#" class="link">+1 577-485-645</a></li>
+							<li><a href="#" class="link">(323) 538-4649</a></li>
 							<li>info@cosmoscoaches.com</li>
 						</ul>
 					</div>
@@ -135,6 +154,7 @@
 				</div>
 			</div>
 		</footer>
+
 		<script src="/assets/main.js"></script>
 	</body>
 </html>
