@@ -1,13 +1,8 @@
 @import 'resets';
 
-.margin-top {
-	// margin-bottom: 10em;
-	height: 8em;
-}
-
 .about-section {
 	background: url('/src/images/about-bg.jpeg') center/cover, no-repeat;
-	height: 600px;
+	min-height: 600px;
 	width: 100%;
 	position: relative;
 	margin-bottom: 7em;
@@ -23,9 +18,11 @@
 	.container {
 		@include widthMixin();
 		display: flex;
-		align-items: center;
+		// align-items: center;
 		justify-content: center;
-		height: 100%;
+		min-height: 300px;
+		padding-top: 10em;
+		margin-bottom: 5em;
 
 		.wrap {
 			position: relative;
@@ -43,6 +40,135 @@
 				color: $color-light;
 				max-width: 500px;
 				text-align: center;
+			}
+		}
+	}
+
+	.card-container {
+		position: relative;
+		z-index: 2;
+		padding-bottom: 4em;
+		display: grid;
+		gap: 2em;
+		@include widthMixin();
+
+		.card {
+			color: $color-light;
+			background: rgba(1, 2, 2, 0.548);
+			backdrop-filter: blur(10px);
+			-webkit-backdrop-filter: blur(10px);
+			padding: 2em;
+			border-radius: 15px;
+
+			.icon-wrap {
+				height: 40px;
+				width: 40px;
+				background: $color-light;
+				margin-bottom: 1em;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border-radius: 100%;
+
+				.fa-solid {
+					color: $primary-color;
+					font-size: 1.3rem;
+					display: inline-block;
+				}
+			}
+
+			.title {
+				margin-bottom: 1.5em;
+				color: $color-light;
+				margin-left: 2em;
+				position: relative;
+				width: fit-content;
+
+				&::before {
+					content: '';
+					position: absolute;
+					height: 1.5px;
+					width: 25px;
+					right: 105%;
+					background: $primary-color;
+					top: 50%;
+				}
+			}
+		}
+
+		@media screen and (min-width: 62em) {
+			display: flex;
+			justify-content: center;
+
+			.card {
+				width: 350px;
+				height: fit-content;
+
+				&:nth-child(1) {
+					.title {
+						position: relative;
+
+						&::after {
+							content: '1';
+							position: absolute;
+							height: 20px;
+							width: 20px;
+							border-radius: 100%;
+							background: $primary-color;
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							top: 50%;
+							transform: translateY(-50%);
+							left: 105%;
+							@include poppins-semibold();
+						}
+					}
+				}
+
+				&:nth-child(2) {
+					.title {
+						position: relative;
+
+						&::after {
+							content: '2';
+							position: absolute;
+							height: 20px;
+							width: 20px;
+							border-radius: 100%;
+							background: $primary-color;
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							top: 50%;
+							transform: translateY(-50%);
+							left: 105%;
+							@include poppins-semibold();
+						}
+					}
+				}
+
+				&:nth-child(3) {
+					.title {
+						position: relative;
+
+						&::after {
+							content: '3';
+							position: absolute;
+							height: 20px;
+							width: 20px;
+							border-radius: 100%;
+							background: $primary-color;
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							top: 50%;
+							transform: translateY(-50%);
+							left: 105%;
+							@include poppins-semibold();
+						}
+					}
+				}
 			}
 		}
 	}

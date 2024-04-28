@@ -1,5 +1,123 @@
 @import 'resets';
 
 .our-services-section {
-	background: #fff;
+	background: url('/src/images/background.jpg') center/cover, no-repeat;
+	min-height: 500px;
+	padding: 5em 0;
+	margin-bottom: 5em;
+
+	.container {
+		@include widthMixin();
+
+		.wrap {
+			text-align: center;
+			margin-bottom: 3.5em;
+			display: flex;
+			justify-content: center;
+
+			.title {
+				color: $color-light;
+				font-size: 30px;
+				position: relative;
+				width: fit-content;
+				margin-left: 1.6em;
+
+				&::before {
+					content: '';
+					position: absolute;
+					height: 1.5px;
+					width: 40px;
+					right: 105%;
+					background: $primary-color;
+					top: 50%;
+				}
+			}
+		}
+	}
+
+	.services-wrap {
+		// @include widthMixin();
+
+		display: grid;
+		grid-auto-flow: column;
+		// grid-template-columns: 27%;
+		grid-template-rows: 300px;
+		overflow-x: auto;
+		gap: 1em;
+		padding: 0 1em;
+
+		.card {
+			background: rgba(1, 2, 2, 0.418);
+			backdrop-filter: blur(10px);
+			-webkit-backdrop-filter: blur(6px);
+			width: 300px;
+			padding: 1.5em;
+			border-radius: 15px;
+			overflow-y: scroll;
+			// height: fit-content;
+
+			.icon-wrap {
+				height: 40px;
+				width: 40px;
+				background: $color-light;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border-radius: 100%;
+				// margin: 0 auto;
+				margin-bottom: 1em;
+
+				.fi {
+					color: $primary-color;
+					font-size: 1.3rem;
+					display: inline-block;
+				}
+			}
+
+			.title-wrap {
+				.title {
+					margin-bottom: 1em;
+					color: $color-light;
+					margin-left: 2.2em;
+					position: relative;
+					width: fit-content;
+					// background: $color-light;
+					// padding: 0 0.5em;
+
+					&::before {
+						content: '';
+						position: absolute;
+						height: 1px;
+						width: 25px;
+						right: 105%;
+						background: $primary-color;
+						top: 50%;
+					}
+				}
+			}
+
+			.text {
+				color: $color-light;
+				font-size: 0.9rem;
+			}
+		}
+
+		@media screen and (min-width: 62em) {
+			grid-auto-flow: unset;
+
+			width: 80%;
+			margin: 0 auto;
+			grid-template-columns: repeat(3, 1fr);
+
+			.card {
+				width: 100%;
+				height: 300px;
+			}
+		}
+	}
+
+	@media screen and (min-width: 62em) {
+		min-height: 600px;
+		padding-bottom: 6em;
+	}
 }

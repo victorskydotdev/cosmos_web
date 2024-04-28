@@ -7,8 +7,29 @@
 		@include widthMixin();
 		padding: 2em 0;
 
-		.heading {
-			@include headingMixin();
+		.title-container {
+			text-align: center;
+			display: flex;
+			justify-content: center;
+
+			.heading {
+				@include headingMixin();
+				color: $color-light;
+				font-size: 30px;
+				position: relative;
+				width: fit-content;
+				margin-left: 1.6em;
+
+				&::before {
+					content: '';
+					position: absolute;
+					height: 1.5px;
+					width: 40px;
+					right: 105%;
+					background: $primary-color;
+					top: 50%;
+				}
+			}
 		}
 
 		.wrap {

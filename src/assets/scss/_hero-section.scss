@@ -4,6 +4,7 @@
 	background: url('/dist/images/cosmos-hero-bg.jpeg') center/cover, no-repeat;
 	min-height: 100vh;
 	// position: relative;
+	margin-bottom: 7em;
 
 	.first-hero-wrap {
 		@include widthMixin();
@@ -18,11 +19,11 @@
 			.masthead {
 				display: flex;
 				color: #fff;
-				font-size: clamp(2vw, 60px, 12vw);
+				font-size: clamp(1vw, 60px, 8vw);
 				text-align: center;
 				@include poppins-semibold;
-				line-height: $lineHeight;
-				max-width: 800px;
+				// line-height: $lineHeight;
+				max-width: 1000px;
 			}
 
 			.animation-icon-wrap {

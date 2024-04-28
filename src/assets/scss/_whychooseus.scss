@@ -1,0 +1,122 @@
+@import 'resets';
+
+.why-choose-us-section {
+	padding: 4em 0;
+	.container {
+		.title-container {
+			text-align: center;
+			margin-bottom: 4.6em;
+			display: flex;
+			justify-content: center;
+
+			.title {
+				color: $color-light;
+				font-size: 30px;
+				position: relative;
+				width: fit-content;
+				margin-left: 1.6em;
+
+				&::before {
+					content: '';
+					position: absolute;
+					height: 1.5px;
+					width: 40px;
+					right: 105%;
+					background: $primary-color;
+					top: 50%;
+				}
+			}
+		}
+
+		.card-wrap {
+			display: grid;
+			gap: 1em;
+
+			.card {
+				// background: $color-light;
+				height: 300px;
+				width: 100%;
+				padding: 1.5em;
+				border-radius: 15px;
+				color: $primary-color;
+				// text-align: center;
+
+				.icon-wrap {
+					height: 40px;
+					width: 40px;
+					background: $primary-color;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					border-radius: 100%;
+					margin: 0 auto;
+					margin-bottom: 1em;
+					display: none;
+
+					.fa-solid {
+						color: $color-light;
+						font-size: 1.3rem;
+						display: inline-block;
+					}
+				}
+
+				.title-wrap {
+					// text-align: center;
+
+					.title {
+						margin-bottom: 1em;
+						color: $primary-color;
+						margin-left: 2em;
+						position: relative;
+						width: fit-content;
+						background: $color-light;
+						padding: 0 0.5em;
+
+						&::before {
+							content: '';
+							position: absolute;
+							height: 1.5px;
+							width: 25px;
+							right: 105%;
+							background: $primary-color;
+							top: 50%;
+						}
+					}
+
+					.title-modified {
+						font-size: 1rem;
+					}
+				}
+			}
+
+			@media screen and (min-width: 62em) {
+				display: flex;
+				// flex-wrap: wrap;
+
+				// @include widthMixin();
+				// width: 95%;
+				margin: 0 auto;
+
+				.card {
+					height: fit-content;
+					width: 400px;
+
+					// &:nth-child(1) {
+					// 	flex-basis: 45%;
+					// }
+					// &:nth-child(2) {
+					// 	flex-basis: 50%;
+					// 	// margin-top: -30px;
+					// }
+					// &:nth-child(3) {
+					// 	flex-basis: 50%;
+					// }
+					// &:nth-child(4) {
+					// 	flex-basis: 60%;
+					// 	// margin-top: 40px;
+					// }
+				}
+			}
+		}
+	}
+}
