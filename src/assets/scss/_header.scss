@@ -21,6 +21,7 @@
 
 		.nav-links {
 			@include glassBg();
+
 			position: absolute;
 			top: 100%;
 			width: 90%;
@@ -32,23 +33,41 @@
 			border-radius: 20px;
 
 			li {
-				// background: teal;
 				position: relative;
 
 				.link {
 					color: #fff;
-				}
+					display: inline-block;
+					transition: all 500ms ease;
+					position: relative;
+					transition: all 300ms ease;
 
-				&:hover::before {
-					content: '';
-					position: absolute;
-					height: 3px;
-					background: $primary-color;
-					width: 100%;
-					bottom: 0;
-					left: 0;
-					transition: all 10s ease-in-out;
+					&:hover {
+						opacity: 0.6;
+						border-radius: 5px;
+					}
+
+					&:hover::after {
+						content: '';
+						@include gradientBg();
+						position: absolute;
+						height: 3px;
+						width: 100%;
+						transform: scale(1.1, 1.1);
+						border-radius: 5px;
+						left: 0;
+						top: 100%;
+					}
 				}
+			}
+
+			.booking-btn {
+				@include btnMixin();
+				display: inline-block;
+				width: 40%;
+				margin: 1em auto;
+				white-space: nowrap;
+				text-align: center;
 			}
 		}
 
@@ -59,20 +78,23 @@
 		.hamburger {
 			button {
 				border-radius: 10px;
+				cursor: pointer;
 			}
 			.open-btn {
-				background: $primary-color;
+				@include gradientBg();
 				border: none;
 				padding: 1em;
 				color: $color-light;
+				font-size: 18px;
 			}
 
 			.close-btn {
-				background: $primary-color;
+				@include gradientBg();
 				border: none;
 				padding: 1em;
 				color: $color-light;
 				display: none;
+				font-size: 18px;
 			}
 		}
 
@@ -86,11 +108,16 @@
 		@media screen and (min-width: 62em) {
 			.nav-links {
 				all: unset;
-
 				display: flex;
-				width: 35%;
-
 				justify-content: space-between;
+				align-items: center;
+				gap: 3em;
+				width: 50%;
+
+				.booking-btn {
+					width: 30%;
+					margin-left: 5em;
+				}
 			}
 
 			.hamburger {

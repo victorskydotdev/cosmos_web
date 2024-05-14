@@ -3,14 +3,15 @@
 .hero-section {
 	min-height: 100vh;
 	position: relative;
+	background: $color-dark;
+	opacity: 0.9;
 
-	&::after {
-		content: '';
-		position: absolute;
-		inset: 0;
-		background: $color-dark;
-		opacity: 0.9;
-	}
+	// &::after {
+	// 	content: '';
+	// 	position: absolute;
+	// 	inset: 0;
+
+	// }
 
 	.container {
 		display: grid;
