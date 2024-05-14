@@ -10,6 +10,10 @@
 	box-sizing: border-box;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 // font family mixins
 @mixin poppins-regular() {
 	font-family: 'Poppins', sans-serif;
@@ -36,13 +40,13 @@
 }
 
 html {
-	background: #000;
 	scroll-behavior: smooth;
 }
 
 body {
 	@include poppins-regular();
 	position: relative;
+	background: #fff !important;
 }
 
 // basic element resets
@@ -59,19 +63,28 @@ $lineHeight: 1.7;
 $primary-color: #318a4f;
 $color-light: #fff;
 $color-dark: #000;
+$btn-color: #0292d5;
+$text-color: #929292;
 
 @mixin widthMixin() {
 	width: 90%;
 	margin: 0 auto;
 }
 
-@mixin btnstyle() {
-	padding: 1em 1.4em;
-	@include poppins-medium();
-	background: $primary-color;
+@mixin textMixin() {
+	color: $text-color;
+	font-size: 15px;
+	line-height: 1.8;
+}
+
+@mixin btnMixin() {
+	background: $btn-color;
+	padding: 1em 2em;
 	border: none;
+	@include poppins-medium();
+	display: inline-block;
+	border-radius: 5px;
 	color: $color-light;
-	border-radius: 6px;
 	cursor: pointer;
 }
 
@@ -83,16 +96,62 @@ $color-dark: #000;
 	margin-bottom: 2em;
 }
 
+@mixin gradientText() {
+	background: linear-gradient(
+		125deg,
+		hsl(199deg 98% 42%) 0%,
+		hsl(200deg 100% 42%) 0%,
+		hsl(202deg 100% 42%) 0%,
+		hsl(204deg 100% 42%) 1%,
+		hsl(205deg 100% 42%) 1%,
+		hsl(207deg 100% 42%) 3%,
+		hsl(208deg 100% 41%) 4%,
+		hsl(214deg 80% 46%) 6%,
+		hsl(219deg 68% 48%) 9%,
+		hsl(225deg 60% 50%) 13%,
+		hsl(231deg 55% 52%) 19%,
+		hsl(240deg 50% 53%) 27%,
+		hsl(249deg 49% 50%) 40%,
+		hsl(257deg 53% 47%) 64%,
+		hsl(266deg 60% 44%) 90%,
+		hsl(274deg 71% 39%) 100%
+	);
+	background-clip: text;
+	color: transparent;
+	font-size: 30px;
+}
+
+@mixin gradientBg() {
+	background-image: linear-gradient(
+		125deg,
+		hsl(199deg 98% 42%) 0%,
+		hsl(200deg 100% 42%) 0%,
+		hsl(202deg 100% 42%) 0%,
+		hsl(204deg 100% 42%) 1%,
+		hsl(205deg 100% 42%) 1%,
+		hsl(207deg 100% 42%) 3%,
+		hsl(208deg 100% 41%) 4%,
+		hsl(214deg 80% 46%) 6%,
+		hsl(219deg 68% 48%) 9%,
+		hsl(225deg 60% 50%) 13%,
+		hsl(231deg 55% 52%) 19%,
+		hsl(240deg 50% 53%) 27%,
+		hsl(249deg 49% 50%) 40%,
+		hsl(257deg 53% 47%) 64%,
+		hsl(266deg 60% 44%) 90%,
+		hsl(274deg 71% 39%) 100%
+	);
+}
+
 @mixin glassBg() {
-	background: rgb(5, 5, 5);
 	background: linear-gradient(
 		315deg,
-		rgb(8, 8, 8) 15%,
-		rgba(0, 0, 0, 0.5088235123150823) 45%,
-		rgba(74, 74, 74, 1) 100%
+		rgb(8, 8, 8) 10%,
+		rgba(0, 0, 0, 0.24) 45%,
+		rgba(74, 74, 74, 0.397) 100%
 	);
-	backdrop-filter: blur(10px);
-	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(6px);
 }
 
 .hidden {

@@ -2,20 +2,24 @@
 
 .contact-hero {
 	padding-top: 10em;
-	margin-bottom: 10em;
+	margin-bottom: 6em;
 	overflow-x: hidden;
+	position: relative;
+	background: url('/dist/images/bus-interior.jpg') center/cover, no-repeat;
+
+	&::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: $color-dark;
+		opacity: 0.7;
+	}
 
 	.container {
+		position: relative;
+		z-index: 2;
 		@include widthMixin();
-		background: rgb(53, 53, 53);
-		background: linear-gradient(
-			315deg,
-			rgba(53, 53, 53, 1) 15%,
-			rgba(0, 0, 0, 0.5088235123150823) 45%,
-			rgba(74, 74, 74, 1) 100%
-		);
-		backdrop-filter: blur(10px);
-		-webkit-backdrop-filter: blur(10px);
+		@include glassBg();
 		padding: 2em 0;
 		border-radius: 20px;
 		position: relative;
@@ -75,7 +79,7 @@
 	}
 
 	@media screen and (min-width: 62em) {
-		padding-top: 15em;
+		// padding-top: 10em;
 		.container {
 			width: 80%;
 

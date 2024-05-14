@@ -19,4 +19,4 @@ const checkAvailFunct = () => {
 	}
 };
 
-export { checkAvailFunct };
+// export { checkAvailFunct };

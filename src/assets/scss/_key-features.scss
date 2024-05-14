@@ -2,9 +2,11 @@
 
 .key-feature-section {
 	margin-bottom: 5em;
+	// background: red;
 
 	.container {
 		@include widthMixin();
+		padding: 5em 0 0 0;
 
 		.title-container {
 			text-align: center;
@@ -13,90 +15,72 @@
 			justify-content: center;
 
 			.title {
-				color: $color-light;
-				font-size: 30px;
-				position: relative;
+				@include gradientText();
 				width: fit-content;
-				margin-left: 1.6em;
-
-				&::before {
-					content: '';
-					position: absolute;
-					height: 1.5px;
-					width: 40px;
-					right: 105%;
-					background: $primary-color;
-					top: 50%;
-				}
 			}
 		}
 
 		.wrap {
 			display: grid;
-			gap: 2em;
+			gap: 16px;
 
 			.feature-card {
-				background: linear-gradient(
-					315deg,
-					rgb(8, 8, 8) 15%,
-					rgba(0, 0, 0, 0.5088235123150823) 45%,
-					rgba(74, 74, 74, 1) 100%
-				);
-				backdrop-filter: blur(10px);
-				-webkit-backdrop-filter: blur(10px);
-				border-radius: 15px;
+				@include gradientBg();
+				border-radius: 5px;
 				padding: 2em;
 				color: $color-light;
+				position: relative;
 
-				.icon {
-					height: 40px;
-					width: 40px;
-					background: $color-light;
-					margin-bottom: 1em;
-					display: flex;
-					align-items: center;
-					justify-content: center;
-					border-radius: 100%;
-
-					.fa-solid {
-						color: $primary-color;
-						font-size: 1.3rem;
-						display: inline-block;
-					}
+				&::after {
+					content: '';
+					position: absolute;
+					background: $color-dark;
+					opacity: 0.7;
+					inset: 0;
+					border-radius: 5px;
 				}
 
 				.feature-title {
-					margin-bottom: 1.5em;
-					color: $color-light;
-					margin-left: 2em;
+					margin-bottom: 1em;
 					position: relative;
+					z-index: 2;
 					width: fit-content;
-
-					&::before {
-						content: '';
-						position: absolute;
-						height: 1.5px;
-						width: 25px;
-						right: 105%;
-						background: $primary-color;
-						top: 50%;
-					}
+					color: $color-light;
+					font-size: 20px;
 				}
 
 				.feature-text {
 					line-height: $lineHeight;
+					position: relative;
+					z-index: 2;
+					font-size: 15px;
 				}
+
+				// &:nth-child(1) {
+				// 	background: url('/dist/images/amenities.jpeg') center/cover, no-repeat;
+				// }
+
+				// &:nth-child(2) {
+				// 	background: url('/dist/images/chauffeur.jpeg') center/cover, no-repeat;
+				// }
+
+				// &:nth-child(3) {
+				// 	background: url('/dist/images/itenerary.jpeg') center/cover, no-repeat;
+				// }
 			}
 
 			@media screen and (min-width: 62em) {
 				display: flex;
-				// gap: 1em;
 
 				.feature-card {
 					width: 400px;
 					height: fit-content;
 				}
 			}
+		}
+
+		@media screen and (min-width: 62em) {
+			width: 80%;
 		}
 	}
 }

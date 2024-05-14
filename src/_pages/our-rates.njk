@@ -3,13 +3,8 @@ title: 'Our rates'
 layout: base.njk
 ---
 
-<section class="rate-card-section hidden">
-	<div class="container">
-		<img
-			src="/images/shapes/contact-elipse-shape.svg"
-			alt=""
-			class="elipse-shape" />
-
+<section class="rate-card-section">
+	<div class="container hidden">
 		<h3 class="title">Pricing</h3>
 
 		<h2 class="rate">$125 <span>/per hour</span></h2>
@@ -19,7 +14,165 @@ layout: base.njk
 		</div>
 
 		<div class="btn-wrap">
-			<button class="btn check-avail-btn" id="">Check availability</button>
+			<a href="#rates" class="btn check-avail-btn" id="">Book a ride with us</a>
 		</div>
 	</div>
 </section>
+
+<!-- booking section -->
+<section class="booking-section">
+	<div class="container">
+		<div class="card-wrapper">
+			<!-- got questions card -->
+			<div class="card card-one hidden">
+				<h3 class="heading">Got questions?</h3>
+
+				<p class="subtext">
+					We've answered most of your pressing questions about how we render
+					amazing services to you in the FAQ section.
+				</p>
+
+				<a class="link" href="/#faq">Go to FAQ</a>
+			</div>
+
+			<!-- contact card -->
+			<div class="card card-two hidden">
+				<h3 class="heading">Dial-A-Ride</h3>
+
+				<p class="subtext">
+					<a class="contact-num" href="tel:+1-800-COSMOS">
+						<span> <i class="fi fi-tr-phone-flip"></i> </span>1-800-COSMOS</a
+					>
+				</p>
+			</div>
+		</div>
+
+		<!-- booking form -->
+		<form action="#" class="booking-form" id="rates">
+			<h3 class="heading">Want a ride? Start here!</h3>
+
+			<div class="input-wrapper">
+				<div class="name-wrap">
+					<div class="first-name">
+						<label for="first-name">First name</label>
+
+						<input
+							type="text"
+							id="first-name"
+							placeholder="First Name"
+							class="name-input"
+							name="first-name"
+							required />
+					</div>
+
+					<div class="last-name">
+						<label for="last-name">Last name</label>
+						<input
+							type="text"
+							id="last-name"
+							placeholder="Last Name"
+							class="name-input"
+							name="last-name"
+							required />
+					</div>
+				</div>
+
+				<div class="contact-wrap">
+					<div class="phone-wrap">
+						<label for="phone">Phone number</label>
+
+						<input
+							placeholder="Pnone number"
+							type="tel"
+							name="phone"
+							id="phone"
+							required />
+					</div>
+
+					<div class="email-wrap">
+						<label for="email">Email Address</label>
+
+						<input
+							type="email"
+							placeholder="Email Address"
+							name="email"
+							id="email"
+							required />
+					</div>
+				</div>
+
+				<div class="ride-container">
+					<div class="ride-service-wrap">
+						<div class="wrap">
+							<label for="ride-service">Select Ride Service</label>
+
+							<select name="ride-intent" class="ride-intent" id="ride-service">
+								<option value="prom">Prom & Homecoming</option>
+								<option value="bachelor-party">
+									Bachelor & Bachelorette Party
+								</option>
+								<option value="wedding">wedding</option>
+								<option value="nightlife">Nightlife</option>
+								<option value="concert">Concert</option>
+								<option value="sporting-event">Sporting Event</option>
+							</select>
+						</div>
+
+						<div class="wrap">
+							<label for="quantity">Number of riders</label>
+
+							<input
+								type="number"
+								class="quantity-input"
+								name="number-of-riders"
+								id="quantity"
+								placeholder="3"
+								required />
+						</div>
+					</div>
+
+					<div class="ride-duration-wrap">
+						<label for="ride-duration">Ride duration/hours</label>
+
+						<input
+							type="number"
+							class="name-input"
+							name="ride-duration"
+							placeholder="4"
+							required />
+					</div>
+
+					<div class="date-time-wrap">
+						<div class="date-wrap">
+							<label for="date">Ride start date</label>
+							<input
+								type="date"
+								id="date"
+								class="date-input"
+								name="ride-date"
+								placeholder=""
+								required />
+						</div>
+
+						<div class="time-wrap">
+							<label for="time">Ride start time</label>
+							<input
+								type="text"
+								id="time"
+								class="time-input"
+								name="ride-time"
+								placeholder="03:00PM"
+								required />
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="button-wrap">
+				<button type="submit" class="btn">Submit</button>
+			</div>
+		</form>
+		<!-- booking form -->
+	</div>
+</section>
+<!-- end of booking section -->

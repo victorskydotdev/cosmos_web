@@ -1,0 +1,73 @@
+@import 'resets';
+
+.history-section {
+	padding: 5em 0 0 0;
+
+	.container {
+		display: grid;
+		gap: 2em;
+		@include widthMixin();
+
+		.text-area {
+			.heading {
+				margin-bottom: 1.5em;
+				@include gradientText();
+			}
+
+			.subtext {
+				margin-bottom: 2.5em;
+				@include textMixin();
+			}
+
+			.btn {
+				@include btnMixin();
+			}
+		}
+
+		.images-wrap {
+			display: grid;
+			gap: 1em;
+
+			.img-card {
+				height: 400px;
+				width: 100%;
+				background: teal;
+				border-radius: 10px;
+
+				&:first-child {
+					background: url('/dist/images/bus-interior.jpg') center/cover,
+						no-repeat;
+				}
+
+				&:last-child {
+					background: url('/dist/images/bg.jpg') center/cover, no-repeat;
+				}
+			}
+		}
+
+		@media screen and (min-width: 62em) {
+			grid-template-columns: 1fr 1fr;
+			grid-template-areas: 'images-wrap text-area';
+			padding: 5em 0;
+			gap: 3em;
+
+			.text-area {
+				grid-area: text-area;
+				max-width: 450px;
+			}
+
+			.images-wrap {
+				grid-area: images-wrap;
+				display: flex;
+
+				.img-card {
+					width: 300px;
+
+					&:last-child {
+						margin-top: -3em;
+					}
+				}
+			}
+		}
+	}
+}

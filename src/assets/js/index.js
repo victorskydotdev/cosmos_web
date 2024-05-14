@@ -5,5 +5,5 @@ import { checkAvailFunct } from './ride-availability';
 import { animateOnScroll } from './scrollAnimation';
 
 showHideNav();
-checkAvailFunct();
+// checkAvailFunct();
 animateOnScroll();

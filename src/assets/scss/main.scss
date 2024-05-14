@@ -1,14 +1,18 @@
 @use 'header' as *;
 @use 'hero-section' as *;
-@use 'our-services' as *;
+@use 'positioned-card' as *;
+@use 'history-section' as *;
 @use 'key-features' as *;
+@use 'why-section' as *;
+@use 'our-services' as *;
 @use 'map-area' as *;
+@use 'faq-section' as *;
 @use 'footer' as *;
 
 // about styles
 @use 'about-section' as *;
 @use 'statements' as *;
-@use 'whychooseus' as *;
+// @use 'whychooseus' as *;
 
 // contact
 @use 'contact-hero' as *;
@@ -16,4 +20,5 @@
 
 // rate-page
 @use 'rate-card-section' as *;
+@use 'booking-section' as *;
 @use 'booking-section-modal' as *;

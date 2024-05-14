@@ -5,20 +5,19 @@
 	min-height: 600px;
 	width: 100%;
 	position: relative;
-	margin-bottom: 7em;
+	// margin-bottom: 5em;
 
 	&::before {
 		content: '';
 		position: absolute;
 		background: #000;
 		inset: 0;
-		opacity: 0.6;
+		opacity: 0.7;
 	}
 
 	.container {
 		@include widthMixin();
 		display: flex;
-		// align-items: center;
 		justify-content: center;
 		min-height: 300px;
 		padding-top: 10em;
@@ -32,6 +31,7 @@
 				@include headingMixin();
 				position: relative;
 				z-index: 2;
+				@include gradientText();
 
 				margin-bottom: 0.4em;
 			}
@@ -49,50 +49,20 @@
 		z-index: 2;
 		padding-bottom: 4em;
 		display: grid;
-		gap: 2em;
+		gap: 16px;
 		@include widthMixin();
 
 		.card {
 			color: $color-light;
-			background: rgba(1, 2, 2, 0.548);
-			backdrop-filter: blur(10px);
-			-webkit-backdrop-filter: blur(10px);
+			@include glassBg();
 			padding: 2em;
 			border-radius: 15px;
-
-			.icon-wrap {
-				height: 40px;
-				width: 40px;
-				background: $color-light;
-				margin-bottom: 1em;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				border-radius: 100%;
-
-				.fa-solid {
-					color: $primary-color;
-					font-size: 1.3rem;
-					display: inline-block;
-				}
-			}
 
 			.title {
 				margin-bottom: 1.5em;
 				color: $color-light;
-				margin-left: 2em;
 				position: relative;
 				width: fit-content;
-
-				&::before {
-					content: '';
-					position: absolute;
-					height: 1.5px;
-					width: 25px;
-					right: 105%;
-					background: $primary-color;
-					top: 50%;
-				}
 			}
 		}
 
@@ -114,7 +84,7 @@
 							height: 20px;
 							width: 20px;
 							border-radius: 100%;
-							background: $primary-color;
+							@include gradientBg();
 							display: flex;
 							align-items: center;
 							justify-content: center;
@@ -136,7 +106,7 @@
 							height: 20px;
 							width: 20px;
 							border-radius: 100%;
-							background: $primary-color;
+							@include gradientBg();
 							display: flex;
 							align-items: center;
 							justify-content: center;
@@ -158,7 +128,7 @@
 							height: 20px;
 							width: 20px;
 							border-radius: 100%;
-							background: $primary-color;
+							@include gradientBg();
 							display: flex;
 							align-items: center;
 							justify-content: center;

@@ -2,165 +2,47 @@
 
 .statements-section {
 	margin-bottom: 5em;
-	.parent-container {
-		min-height: 1000px;
-		width: 90%;
-		margin: 0 auto;
-		display: flex;
-		gap: 2em;
-		// background: red;
+	padding: 5em 0;
 
-		.position-sticky-scroll {
-			min-height: 300px;
+	.container {
+		@include widthMixin();
+		display: grid;
+		gap: 16px;
 
-			width: 80%;
-			display: grid;
-			gap: 1.5em;
+		.card {
+			@include gradientBg();
+			border-radius: 5px;
+			padding: 2em;
+			color: $color-light;
+			position: relative;
+			height: fit-content;
 
-			.statement-card {
-				background: rgb(53, 53, 53);
-				background: linear-gradient(
-					315deg,
-					rgba(53, 53, 53, 1) 15%,
-					rgba(0, 0, 0, 0.5088235123150823) 45%,
-					rgba(74, 74, 74, 1) 100%
-				);
-				backdrop-filter: blur(10px);
-				-webkit-backdrop-filter: blur(10px);
-				border-radius: 15px;
-				display: grid;
-				gap: 1.5em;
-				padding: 2em 2em;
-				margin-bottom: 3em;
+			&::after {
+				content: '';
+				position: absolute;
+				background: $color-dark;
+				opacity: 0.7;
+				inset: 0;
+				border-radius: 5px;
 			}
 
-			.card {
-				max-width: 500px;
-				height: max-content;
-
-				padding: 3em;
-				color: $color-light;
-
-				.heading {
-					margin-bottom: 1em;
-					font-size: 30px;
-				}
-
-				.wrap {
-					display: flex;
-					gap: 2em;
-					flex-wrap: wrap;
-
-					.text {
-						background: rgb(53, 53, 53);
-						background: linear-gradient(
-							315deg,
-							rgba(53, 53, 53, 1) 15%,
-							rgba(0, 0, 0, 0.5088235123150823) 45%,
-							rgba(74, 74, 74, 1) 100%
-						);
-						backdrop-filter: blur(10px);
-						-webkit-backdrop-filter: blur(10px);
-						padding: 3em;
-						border-radius: 15px;
-						position: relative;
-						z-index: 0 !important;
-						display: grid;
-						gap: 1em;
-
-						.elipse-shape {
-							position: absolute;
-							width: 300px;
-							height: 250px;
-							top: -30px;
-							z-index: -2;
-
-							span {
-								position: relative;
-								z-index: 3;
-								display: block;
-							}
-
-							.text-heading {
-								@include poppins-bold();
-								font-weight: bold;
-							}
-						}
-					}
-				}
+			.wrap {
+				position: relative;
+				z-index: 2;
 			}
 		}
 
-		.position-sticky {
-			position: sticky;
-			top: 20px;
-			height: 300px;
-
-			width: 100%;
+		@media screen and (min-width: 43em) {
 			display: flex;
-			gap: 1em;
+		}
+
+		@media screen and (min-width: 62em) {
+			display: flex;
+			width: 70%;
 
 			.card {
-				height: 300px;
-				width: 100%;
-				border-radius: 10px;
-
-				&:nth-child(1) {
-					background: url('/src/images/card-img1.jpeg') center/cover, no-repeat;
-				}
-
-				&:nth-child(2) {
-					background: url('/src/images/card-img2.jpeg') center/cover, no-repeat;
-				}
-			}
-		}
-
-		@media screen and (max-width: 64em) {
-			display: block;
-
-			.position-sticky-scroll {
-				width: 100%;
-
-				.statement-card {
-					width: 90%;
-					margin: 0 auto;
-					text-align: center;
-				}
-
-				.card {
-					max-width: unset;
-					text-align: center;
-				}
-			}
-
-			.position-sticky {
-				display: none;
-			}
-		}
-
-		@media screen and (max-width: 43em) {
-			display: block;
-
-			.position-sticky-scroll {
-				width: 100%;
-				margin: 0 auto;
-
-				.statement-card {
-					width: 100%;
-					margin: 0 auto;
-					text-align: justify;
-				}
-
-				.card {
-					max-width: unset;
-					text-align: center;
-					width: 100%;
-
-					padding: 1em;
-
-					.wrap {
-						width: 100%;
-					}
+				&:first-child {
+					margin-top: -2em;
 				}
 			}
 		}

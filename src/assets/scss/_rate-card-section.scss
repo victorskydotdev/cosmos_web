@@ -1,9 +1,11 @@
 @import 'resets';
 
 .rate-card-section {
+	min-height: 100vh;
+	margin-bottom: 7em;
 	padding-top: 10em;
-	margin-bottom: 0em;
 	overflow-x: hidden;
+	background: url('/dist/images/bg.jpg') center/cover, no-repeat;
 
 	.container {
 		@include widthMixin();
@@ -22,25 +24,12 @@
 		margin-bottom: 5em;
 		min-height: 300px;
 		position: relative;
-		// text-align: center;
-
-		.elipse-shape {
-			position: absolute;
-			top: 0;
-			height: 300px;
-			// display: none;
-			z-index: 1;
-
-			@media screen and (min-width: 62em) {
-				width: 600px;
-				top: -10%;
-			}
-		}
 
 		.title {
 			@include headingMixin();
 			position: relative;
 			z-index: 2;
+			color: $color-light;
 		}
 
 		.rate {
@@ -62,11 +51,8 @@
 		}
 
 		.card {
-			background: rgba(1, 2, 2, 0.548);
-			backdrop-filter: blur(10px);
-			-webkit-backdrop-filter: blur(10px);
-
-			border-radius: 15px;
+			@include gradientBg();
+			border-radius: 5px;
 			padding: 1em 2em;
 			@include widthMixin();
 			margin-bottom: 2em;
@@ -79,8 +65,9 @@
 
 		.btn-wrap {
 			text-align: center;
+
 			.btn {
-				@include btnstyle();
+				@include btnMixin();
 			}
 		}
 

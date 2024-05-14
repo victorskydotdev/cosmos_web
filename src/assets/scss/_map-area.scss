@@ -7,47 +7,27 @@
 		@include widthMixin();
 		padding: 2em 0;
 
-		.title-container {
-			text-align: center;
-			display: flex;
-			justify-content: center;
-
-			.heading {
-				@include headingMixin();
-				color: $color-light;
-				font-size: 30px;
-				position: relative;
-				width: fit-content;
-				margin-left: 1.6em;
-
-				&::before {
-					content: '';
-					position: absolute;
-					height: 1.5px;
-					width: 40px;
-					right: 105%;
-					background: $primary-color;
-					top: 50%;
-				}
-			}
-		}
-
 		.wrap {
 			display: grid;
 			gap: 3em;
 
 			.text-wrap {
 				max-width: 470px;
-				text-align: center;
-				margin: 0 auto;
+
+				.heading-text {
+					text-align: left;
+					margin: unset;
+					margin-bottom: 0.6em;
+					@include gradientText();
+				}
 
 				.text {
-					color: $color-light;
-					margin-bottom: 1em;
+					margin-bottom: 1.8em;
+					color: $text-color;
 				}
 
 				.btn {
-					@include btnstyle();
+					@include btnMixin();
 				}
 			}
 

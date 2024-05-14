@@ -5,10 +5,6 @@ layout: 'base.njk'
 
 <section class="contact-hero">
 	<div class="container">
-		<img
-			src="/images/shapes/contact-elipse-shape.svg"
-			alt=""
-			class="elipse-shape" />
 		<h3 class="title hidden">Contact us</h3>
 
 		<div class="card-wrap">
@@ -55,10 +51,13 @@ layout: 'base.njk'
 			</div>
 		</div>
 	</div>
+</section>
 
+<section class="contact-form-section">
+	<h3 class="heading hidden">Send us a message</h3>
 	<!-- contact form section -->
 	<div class="form-wrap">
-		<form action="#" class="form">
+		<form action="#" class="form hidden" netlify>
 			<div class="grid-area">
 				<div class="name-wrap">
 					<input type="text" placeholder="Name" name="client-name" required />

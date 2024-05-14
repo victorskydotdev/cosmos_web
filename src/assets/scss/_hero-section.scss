@@ -1,124 +1,142 @@
 @import 'resets';
 
 .hero-section {
-	background: url('/dist/images/cosmos-hero-bg.jpeg') center/cover, no-repeat;
 	min-height: 100vh;
-	// position: relative;
-	margin-bottom: 7em;
+	position: relative;
 
-	.first-hero-wrap {
+	&::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: $color-dark;
+		opacity: 0.9;
+	}
+
+	.container {
+		display: grid;
+		gap: 5em;
+		padding: 10em 0 5em 0;
 		@include widthMixin();
 
-		.first-section-wrap {
-			height: 700px;
-			display: flex;
-			justify-content: center;
-			align-items: center;
+		.hero-wrap {
 			position: relative;
+			z-index: 1;
+			max-width: 700px;
 
 			.masthead {
-				display: flex;
-				color: #fff;
-				font-size: clamp(1vw, 60px, 8vw);
-				text-align: center;
+				@include gradientText();
+				font-size: clamp(2vw, 40px, 7vw);
 				@include poppins-semibold;
-				// line-height: $lineHeight;
-				max-width: 1000px;
+				margin-bottom: 0.8em;
 			}
 
-			.animation-icon-wrap {
-				position: absolute;
-				top: 75%;
-
-				.fa-solid {
-					color: $color-light;
-					font-size: 2rem;
-					animation: bounce 1s infinite;
-				}
-			}
-		}
-	}
-
-	.second-hero-wrap {
-		color: #fff;
-		display: grid;
-		gap: 4em;
-
-		.subtext-wrap {
-			.sub-heading {
-				margin-bottom: 1.5em;
-				max-width: 350px;
-				@include poppins-medium();
+			.subtext {
+				color: $color-light;
+				margin-bottom: 2.5em;
 			}
 
-			.booknow-btn {
-				@include btnstyle();
+			.btn {
+				@include btnMixin();
 			}
 		}
 
-		.cards-wrap {
-			display: grid;
-			gap: 1.5em;
+		.contact-container {
+			position: relative;
+			z-index: 1;
+			@include gradientBg();
+			border-radius: 10px;
 
 			.card {
-				width: 100%;
-				background: rgba(1, 2, 2, 0.548);
-				backdrop-filter: blur(10px);
-				-webkit-backdrop-filter: blur(10px);
-				height: 250px;
-				border-radius: 10px;
-				display: grid;
-				place-content: center;
-				place-content: center;
-				text-align: center;
-				gap: 3em;
+				padding: 3em;
 
 				.heading {
-					font-size: 1.3em;
-					@include poppins-bold();
-					text-transform: capitalize;
-				}
-
-				.btn {
-					@include btnstyle();
-					display: inline-block;
-					width: 120px;
-					white-space: nowrap;
+					color: $color-light;
 					text-align: center;
-					place-self: center;
+					margin-bottom: 1em;
+				}
+
+				.wrap {
+					.number-wrap {
+						font-size: 20px;
+						@include poppins-semibold();
+						color: $color-light;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						gap: 0.5em;
+
+						.contact-num {
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							gap: 0.5em;
+							color: $color-light;
+
+							span {
+								height: 50px;
+								width: 50px;
+								border-radius: 100%;
+								background: $color-light;
+								display: flex;
+								align-items: center;
+								justify-content: center;
+
+								.fi {
+									@include gradientText();
+									display: inline-block;
+									transform: rotate(90deg);
+									margin-left: -0.3em;
+								}
+							}
+						}
+					}
 				}
 			}
 		}
+	}
 
-		@media screen and (min-width: 43em) {
+	@media screen and (min-width: 62em) {
+		.container {
 			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 0;
+			height: 700px;
+			padding-top: 4em;
 
-			.subtext-wrap {
-				width: 70%;
-				justify-content: space-between;
+			.hero-wrap {
+				max-width: unset;
+				text-align: left;
+
+				.masthead {
+					width: 600px;
+					line-height: 1.3;
+				}
+
+				.subtext {
+					max-width: unset;
+					margin: unset;
+					margin-bottom: 3em;
+					max-width: 500px;
+				}
 			}
 
-			.cards-wrap {
-				width: 60%;
-			}
-		}
-
-		@media screen and (min-width: 62em) {
-			.cards-wrap {
+			.contact-container {
+				position: absolute;
+				right: 10%;
+				top: 30%;
 				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 400px;
+				height: 200px;
+				// @include glassBg();
+
+				.card {
+					padding: unset;
+					text-align: left;
+				}
 			}
 		}
-	}
-}
-
-@keyframes bounce {
-	0%,
-	100% {
-		transform: translateY(0); /* Start and end position */
-	}
-	50% {
-		transform: translateY(
-			-20px
-		); /* Midpoint of the animation - arrow moves up */
 	}
 }

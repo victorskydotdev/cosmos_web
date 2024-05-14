@@ -1,0 +1,142 @@
+@import 'resets';
+
+.faq-section {
+	min-height: 800px;
+	padding-bottom: 5em;
+	margin-bottom: 5em;
+
+	.container {
+		@include widthMixin();
+		display: grid;
+		gap: 2em;
+
+		.faq-heading-wrap {
+			.heading {
+				font-size: 30px;
+				text-transform: capitalize;
+				@include gradientText();
+				margin-bottom: 1em;
+			}
+
+			.wrap {
+				display: grid;
+				gap: 0.7em;
+
+				button {
+					background: #d9d9d9;
+					font-size: 1rem;
+					border: none;
+					padding: 20px 20px;
+					border-radius: 5px;
+					@include poppins-medium();
+					cursor: pointer;
+				}
+
+				.booking-btn {
+					display: block;
+					@include btnMixin();
+					text-align: center;
+					text-transform: capitalize;
+				}
+			}
+		}
+
+		.accordion-q-wrap {
+			.accordion-item {
+				padding-top: 0.4em;
+				margin-bottom: 2em;
+				position: relative;
+
+				.accordion-heading-area {
+					display: flex;
+					align-items: center;
+					gap: 3em;
+					margin-bottom: 1em;
+					@include gradientText();
+					font-size: 18px;
+
+					button {
+						display: none;
+						background: none;
+						border: none;
+						cursor: pointer;
+
+						.fi {
+							font-size: 1.5rem;
+							@include gradientText();
+						}
+					}
+
+					.contract-btn {
+						display: none;
+					}
+				}
+
+				.accordion-content {
+					.text {
+						@include textMixin();
+					}
+				}
+
+				&::after {
+					content: '';
+					position: absolute;
+					height: 1px;
+					width: 95%;
+					top: 110%;
+					left: 0;
+					background: $text-color;
+				}
+			}
+		}
+
+		@media screen and (min-width: 43em) {
+			.faq-heading-wrap {
+				.heading {
+					text-align: center;
+				}
+
+				.wrap {
+					display: flex;
+					justify-content: center;
+				}
+			}
+
+			.accordion-q-wrap {
+				width: 80%;
+				margin: 0 auto;
+			}
+		}
+
+		@media screen and (min-width: 62em) {
+			display: flex;
+			gap: 10em;
+
+			.faq-heading-wrap {
+				width: 45%;
+				.heading {
+					text-align: left;
+				}
+
+				.wrap {
+					display: grid;
+					justify-content: unset;
+				}
+			}
+
+			.accordion-q-wrap {
+				width: 60%;
+
+				.accordion-item {
+					max-width: 500px;
+
+					.accordion-content {
+						.text {
+							max-width: 450px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

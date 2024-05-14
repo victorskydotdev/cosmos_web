@@ -1,13 +1,27 @@
 @import 'resets';
 
 .our-services-section {
-	background: url('/src/images/background.jpg') center/cover, no-repeat;
 	min-height: 500px;
 	padding: 5em 0;
 	margin-bottom: 5em;
+	position: relative;
+	background: url('/dist/images/bg.jpg') center/cover, no-repeat;
+	position: relative;
+
+	&::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		top: 0;
+		left: 0;
+		background: $color-dark;
+		opacity: 0.6;
+	}
 
 	.container {
 		@include widthMixin();
+		position: relative;
+		z-index: 2;
 
 		.wrap {
 			text-align: center;
@@ -16,83 +30,39 @@
 			justify-content: center;
 
 			.title {
-				color: $color-light;
 				font-size: 30px;
 				position: relative;
 				width: fit-content;
-				margin-left: 1.6em;
-
-				&::before {
-					content: '';
-					position: absolute;
-					height: 1.5px;
-					width: 40px;
-					right: 105%;
-					background: $primary-color;
-					top: 50%;
-				}
+				@include gradientText();
 			}
 		}
 	}
 
 	.services-wrap {
-		// @include widthMixin();
-
+		position: relative;
+		z-index: 2;
 		display: grid;
 		grid-auto-flow: column;
-		// grid-template-columns: 27%;
-		grid-template-rows: 300px;
 		overflow-x: auto;
 		gap: 1em;
 		padding: 0 1em;
+		position: relative;
+		z-index: 2;
 
 		.card {
-			background: rgba(1, 2, 2, 0.418);
-			backdrop-filter: blur(10px);
-			-webkit-backdrop-filter: blur(6px);
+			@include gradientBg();
 			width: 300px;
-			padding: 1.5em;
-			border-radius: 15px;
+			height: fit-content;
+			padding: 2em;
+			border-radius: 5px;
 			overflow-y: scroll;
-			// height: fit-content;
-
-			.icon-wrap {
-				height: 40px;
-				width: 40px;
-				background: $color-light;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				border-radius: 100%;
-				// margin: 0 auto;
-				margin-bottom: 1em;
-
-				.fi {
-					color: $primary-color;
-					font-size: 1.3rem;
-					display: inline-block;
-				}
-			}
 
 			.title-wrap {
 				.title {
 					margin-bottom: 1em;
 					color: $color-light;
-					margin-left: 2.2em;
-					position: relative;
 					width: fit-content;
-					// background: $color-light;
-					// padding: 0 0.5em;
-
-					&::before {
-						content: '';
-						position: absolute;
-						height: 1px;
-						width: 25px;
-						right: 105%;
-						background: $primary-color;
-						top: 50%;
-					}
+					font-size: 20px;
 				}
 			}
 
@@ -105,19 +75,27 @@
 		@media screen and (min-width: 62em) {
 			grid-auto-flow: unset;
 
+			overflow-x: unset;
 			width: 80%;
 			margin: 0 auto;
 			grid-template-columns: repeat(3, 1fr);
+			padding-top: 2em;
 
 			.card {
 				width: 100%;
-				height: 300px;
+
+				&:nth-child(2) {
+					margin-top: -2em;
+				}
+
+				&:nth-child(4) {
+					margin-top: -2.8em;
+				}
+
+				&:nth-child(5) {
+					margin-top: -12.5em;
+				}
 			}
 		}
-	}
-
-	@media screen and (min-width: 62em) {
-		min-height: 600px;
-		padding-bottom: 6em;
 	}
 }

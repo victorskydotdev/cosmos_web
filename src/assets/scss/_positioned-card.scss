@@ -1,0 +1,64 @@
+@import 'resets';
+
+.positioned-card-section {
+	padding: 2em 0;
+
+	.container {
+		display: grid;
+		gap: 16px;
+
+		.card {
+			height: 300px;
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			padding-top: 2em;
+			border-radius: 5px;
+
+			&::after {
+				content: '';
+				position: absolute;
+				inset: 0;
+				top: 0;
+				left: 0;
+				@include gradientBg();
+				opacity: 0.6;
+				border-radius: 5px;
+			}
+
+			&:first-child {
+				background: url('/dist/images/card-img2.jpeg') center/cover, no-repeat;
+				position: relative;
+			}
+
+			&:last-child {
+				background: url('/dist/images/bus.jpg') center/cover, no-repeat;
+			}
+
+			.heading {
+				color: $color-light;
+				position: relative;
+				z-index: 2;
+			}
+		}
+	}
+
+	@media screen and (min-width: 62em) {
+		position: relative;
+		margin-top: -5em;
+
+		.container {
+			display: flex;
+			justify-content: flex-end;
+			margin-right: 2em;
+
+			.card {
+				width: 350px;
+
+				&:first-child {
+					margin-top: -2em;
+				}
+			}
+		}
+	}
+}
