@@ -117,6 +117,7 @@ $text-color: #929292;
 		hsl(274deg 71% 39%) 100%
 	);
 	background-clip: text;
+	-webkit-background-clip: text;
 	color: transparent;
 	font-size: 30px;
 }
