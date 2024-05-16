@@ -7,6 +7,9 @@
 		<!-- css -->
 		<!-- <link rel="stylesheet" href="/assets/main.css" /> -->
 
+		<!-- stripe js -->
+		<script src="https://js.stripe.com/v3/"></script>
+
 		<!-- flaticon icons CDN -->
 		<link
 			rel="stylesheet"
@@ -127,7 +130,11 @@
 		</div>
 
 		<!-- booking form -->
-		<form action="#" class="booking-form" id="rates">
+		<form
+			action="/_pages/payment"
+			method="POST"
+			class="booking-form"
+			id="rates">
 			<h3 class="heading">Want a ride? Start here!</h3>
 
 			<div class="input-wrapper">
@@ -218,6 +225,7 @@
 							class="name-input"
 							name="ride-duration"
 							placeholder="4"
+							id="duration"
 							required />
 					</div>
 
@@ -244,6 +252,8 @@
 								required />
 						</div>
 					</div>
+
+					<input type="text" id="price" hidden value="125" />
 				</div>
 			</div>
 

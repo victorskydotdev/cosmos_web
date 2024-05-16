@@ -1,0 +1,46 @@
+@import 'resets';
+
+.checkout-page {
+	min-height: 100vh;
+	@include gradientBg();
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	.container {
+		@include widthMixin();
+		background: $color-light;
+		padding: 2em;
+		border-radius: 5px;
+
+		.personalized-element {
+			margin-bottom: 1.5em;
+			@include gradientText();
+			font-size: 25px;
+		}
+
+		.personalized-details {
+			margin-bottom: 2em;
+		}
+
+		.payment-form {
+			.btn {
+				@include btnMixin();
+			}
+		}
+
+		@media screen and (min-width: 43em) {
+			width: 65%;
+		}
+
+		@media screen and (min-width: 62em) {
+			width: 50%;
+			text-align: center;
+
+			.personalized-details {
+				max-width: 500px;
+				margin: 2em auto;
+			}
+		}
+	}
+}

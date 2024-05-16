@@ -7,7 +7,8 @@
 		"build": "webpack --config webpack.config.prod.js",
 		"build:site": "ELEVENTY_ENV=production npx eleventy",
 		"dev:assets": "webpack --config webpack.config.dev.js --watch",
-		"dev:site": "ELEVENTY_ENV=development npx eleventy --serve"
+		"dev:site": "ELEVENTY_ENV=development npx eleventy --serve",
+		"start:netlify": "netlify dev"
 	},
 	"keywords": [
 		"luxury_transportation",
@@ -18,8 +19,13 @@
 	"license": "ISC",
 	"devDependencies": {
 		"@11ty/eleventy": "2.0.1",
+		"@babel/cli": "^7.24.5",
+		"@babel/core": "^7.24.5",
+		"@babel/preset-env": "^7.24.5",
 		"css-loader": "6.10.0",
+		"dotenv-webpack": "8.1.0",
 		"mini-css-extract-plugin": "2.8.1",
+		"netlify-cli": "^17.23.5",
 		"sass": "1.71.1",
 		"sass-loader": "14.1.1",
 		"style-loader": "3.3.4",
@@ -27,5 +33,10 @@
 		"webpack": "5.90.3",
 		"webpack-cli": "5.1.4",
 		"webpack-merge": "5.10.0"
+	},
+	"dependencies": {
+		"express": "^4.19.2",
+		"serverless-http": "^3.2.0",
+		"stripe": "^15.6.0"
 	}
 }

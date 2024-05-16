@@ -37,7 +37,7 @@
 			crossorigin="anonymous"></script>
 
 		<!-- page title -->
-		<title>Contact us</title>
+		<title>Checkout</title>
 	</head>
 	<body class="body">
 		<header class="header">
@@ -85,90 +85,24 @@
 		</header>
 
 		
-<section class="contact-hero">
+<section class="checkout-page">
 	<div class="container">
-		<h3 class="title hidden">Contact us</h3>
+		<h3 class="personalized-element">
+			Hello, <span id="customer-name"></span>
+		</h3>
 
-		<div class="card-wrap">
-			<div class="card hidden">
-				<div class="icon">
-					<img src="/images/icons/phone-icon.svg" alt="" />
-				</div>
-
-				<h4 class="heading">Call us</h4>
-				<p class="info">Mon - Fri from 8am - 5pm</p>
-
-				<div class="url">
-					<a href="tel:+">1-800-COSMOS</a>
-				</div>
-			</div>
-
-			<div class="card hidden">
-				<div class="icon">
-					<img src="/images/icons/location.svg" alt="" />
-				</div>
-
-				<h4 class="heading">Visit our office</h4>
-				<p class="info">123 Party Avenue, Cosmos City, USA</p>
-
-				<div class="url">
-					<a
-						href="https://www.google.com/maps/place/5404+N+99th+St+b,+Omaha,+NE+68134,+USA/@41.3081767,-96.0705309,17z/data=!3m1!4b1!4m5!3m4!1s0x8793ed3333511fe5:0x5f3c55576faf445b!8m2!3d41.3081767!4d-96.067956?entry=ttu"
-						>View on Google maps</a
-					>
-				</div>
-			</div>
-
-			<div class="card hidden">
-				<div class="icon">
-					<img src="/images/icons/user-icon.svg" alt="" />
-				</div>
-
-				<h4 class="heading">Contact sales</h4>
-				<p class="info">We're here to help</p>
-
-				<div class="url">
-					<a href="tel:+">info@cosmoscoaches.com</a>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-
-<section class="contact-form-section">
-	<h3 class="heading hidden">Send us a message</h3>
-	<!-- contact form section -->
-	<div class="form-wrap">
-		<form action="#" class="form hidden" netlify>
-			<div class="grid-area">
-				<div class="name-wrap">
-					<input type="text" placeholder="Name" name="client-name" required />
-				</div>
-
-				<div class="email-wrap">
-					<input
-						type="text"
-						placeholder="Email"
-						name="email-address"
-						required />
-				</div>
-
-				<div class="phone-wrap">
-					<input type="text" placeholder="Phone" name="phone-number" required />
-				</div>
-
-				<div class="message-wrap">
-					<textarea
-						name="message"
-						placeholder="John Doe's message"
-						required></textarea>
-				</div>
-			</div>
-
-			<button class="submit-btn" type="submit">Send message</button>
+		<h4 class="personalized-details">
+			You have successfully booked a ride for the following service:
+			<span class="service-selected"></span>; and your total ride fee is $<span
+				class="total-amount"></span>
+		</h4>
+		<!-- Hello, you have successfully booked a ride. -->
+		<form action="/" class="payment-form" id="payment-form">
+			<button type="submit" class="make-payment-btn btn">
+				Proceed to Payment
+			</button>
 		</form>
 	</div>
-	<!-- end of contact form section -->
 </section>
 
 
