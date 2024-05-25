@@ -44,7 +44,7 @@
 			<div class="container">
 				<div class="logo-wrap">
 					<a href="/">
-						<img class="brand-logo" src="/images/cosmos-logo.jpg" alt="" />
+						<img class="brand-logo" src="/images/cosmos-logo.png" alt="" />
 					</a>
 				</div>
 
@@ -131,7 +131,7 @@
 
 		<!-- booking form -->
 		<form
-			action="/_pages/payment"
+			action="/.netlify/functions/createCheckoutSession"
 			method="POST"
 			class="booking-form"
 			id="rates">
@@ -147,18 +147,18 @@
 							id="first-name"
 							placeholder="First Name"
 							class="name-input"
-							name="first-name"
+							name="firstname"
 							required />
 					</div>
 
 					<div class="last-name">
-						<label for="last-name">Last name</label>
+						<label for="lastname">Last name</label>
 						<input
 							type="text"
 							id="last-name"
 							placeholder="Last Name"
 							class="name-input"
-							name="last-name"
+							name="lastname"
 							required />
 					</div>
 				</div>
@@ -192,7 +192,7 @@
 						<div class="wrap">
 							<label for="ride-service">Select Ride Service</label>
 
-							<select name="ride-intent" class="ride-intent" id="ride-service">
+							<select name="rideintent" class="ride-intent" id="ride-service">
 								<option value="prom">Prom & Homecoming</option>
 								<option value="bachelor-party">
 									Bachelor & Bachelorette Party
@@ -210,7 +210,7 @@
 							<input
 								type="number"
 								class="quantity-input"
-								name="number-of-riders"
+								name="numberofriders"
 								id="quantity"
 								placeholder="3"
 								required />
@@ -218,15 +218,99 @@
 					</div>
 
 					<div class="ride-duration-wrap">
-						<label for="ride-duration">Ride duration/hours</label>
+						<label class="ride-duration-label" for="ride-duration"
+							>Select ride duration</label
+						>
 
-						<input
-							type="number"
-							class="name-input"
-							name="ride-duration"
-							placeholder="4"
-							id="duration"
-							required />
+						
+						<ul class="ride-duration-wrap">
+							
+							<div class="duration-element">
+								<label for="10hour-Ride">10hour-Ride</label>
+
+								<input
+									type="radio"
+									value="price_1PK0tSP1gBFRxfeqkJVThvYe"
+									name="rideDuration"
+									class="product-price" />
+
+								<div class="input-box"></div>
+							</div>
+							
+							<div class="duration-element">
+								<label for="9hour-Ride">9hour-Ride</label>
+
+								<input
+									type="radio"
+									value="price_1PK0siP1gBFRxfeqz7K2Puze"
+									name="rideDuration"
+									class="product-price" />
+
+								<div class="input-box"></div>
+							</div>
+							
+							<div class="duration-element">
+								<label for="8hour-Ride">8hour-Ride</label>
+
+								<input
+									type="radio"
+									value="price_1PK0rOP1gBFRxfeqx7fRBWhB"
+									name="rideDuration"
+									class="product-price" />
+
+								<div class="input-box"></div>
+							</div>
+							
+							<div class="duration-element">
+								<label for="7hour-Ride">7hour-Ride</label>
+
+								<input
+									type="radio"
+									value="price_1PK0qvP1gBFRxfeqU4NWhREa"
+									name="rideDuration"
+									class="product-price" />
+
+								<div class="input-box"></div>
+							</div>
+							
+							<div class="duration-element">
+								<label for="6hour-Ride">6hour-Ride</label>
+
+								<input
+									type="radio"
+									value="price_1PK0qNP1gBFRxfeqfO2T6VXM"
+									name="rideDuration"
+									class="product-price" />
+
+								<div class="input-box"></div>
+							</div>
+							
+							<div class="duration-element">
+								<label for="4hour-Ride">4hour-Ride</label>
+
+								<input
+									type="radio"
+									value="price_1PJz2UP1gBFRxfeqw7QvVelq"
+									name="rideDuration"
+									class="product-price" />
+
+								<div class="input-box"></div>
+							</div>
+							
+							<div class="duration-element">
+								<label for="5hour-Ride">5hour-Ride</label>
+
+								<input
+									type="radio"
+									value="price_1PGgmgP1gBFRxfeqSClwpx4t"
+									name="rideDuration"
+									class="product-price" />
+
+								<div class="input-box"></div>
+							</div>
+							
+						</ul>
+						
 					</div>
 
 					<div class="date-time-wrap">
@@ -236,7 +320,7 @@
 								type="date"
 								id="date"
 								class="date-input"
-								name="ride-date"
+								name="ridedate"
 								placeholder=""
 								required />
 						</div>
@@ -247,13 +331,18 @@
 								type="text"
 								id="time"
 								class="time-input"
-								name="ride-time"
+								name="ridetime"
 								placeholder="03:00PM"
 								required />
 						</div>
 					</div>
 
-					<input type="text" id="price" hidden value="125" />
+					<input
+						name="priceId"
+						class="price-id"
+						id="price"
+						type="hidden"
+						value="" />
 				</div>
 			</div>
 
@@ -265,6 +354,9 @@
 	</div>
 </section>
 <!-- end of booking section -->
+
+<!-- [object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object] -->
+
 
 
 		<!-- <section class="booking-section-modal">
@@ -290,7 +382,7 @@
 			<div class="container">
 				<div class="sitemap-wrap">
 					<div class="logo-wrap">
-						<img class="brand-logo" src="/images/cosmos-logo.jpg" alt="" />
+						<img class="brand-logo" src="/images/cosmos-logo.png" alt="" />
 					</div>
 
 					<div class="company">

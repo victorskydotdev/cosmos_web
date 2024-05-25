@@ -5,76 +5,48 @@ const usernameElement = document.getElementById('customer-name');
 const serviceDetails = document.querySelector('.service-selected');
 const totalPrice = document.querySelector('.total-amount');
 
-// Parse customer name into the usernameElement
-const parseInfo = () => {
-	const customerDetails = JSON.parse(sessionStorage.getItem('customerDetails'));
+// Select radio buttons within duration-element
+const radioButtons = document.querySelectorAll(
+	'.duration-element input[type="radio"]'
+);
+let priceIdElem = document.querySelector('.price-id');
 
-	if (customerDetails) {
-		usernameElement.textContent = customerDetails.name;
-		serviceDetails.textContent = customerDetails.service;
-		totalPrice.textContent = customerDetails.price;
-	} else {
-		console.log('No customer details found in session storage.');
+const handleRadioChange = (event) => {
+	const checkedRadio = event.target;
+
+	if (checkedRadio.checked) {
+		const priceId = checkedRadio.value;
+		console.log(priceId);
+
+		priceIdElem.value = priceId;
+
+		console.log(priceIdElem.value);
 	}
 };
 
-parseInfo(); // calling the parseInfo function
+// Attach change event listener to each radio button
+radioButtons.forEach((radioButton) => {
+	radioButton.addEventListener('change', handleRadioChange);
+});
+// end of radio event towards parsing it to the button.
 
-const pTrigger = () => {
-	if (checkout) {
-		checkout.addEventListener('submit', async (event) => {
-			event.preventDefault();
+// =====================================
 
-			const customerDetails = JSON.parse(
-				sessionStorage.getItem('customerDetails')
-			);
+// const pTrigger = () => {
+// 	checkout.addEventListener('submit', async (event) => {
+// 		event.preventDefault();
 
-			if (!customerDetails) {
-				console.log('No customer details found.');
-				return;
-			}
+// 		console.log('Heeeeeeeeeeeeey, button clicked!');
 
-			const ep = '/netlify/functions/paymentServer';
+// 		const endPoint = '/.netlify/functions/createCheckoutSession';
 
-			try {
-				const response = await fetch(ep, {
-					method: 'POST',
-					headers: {
-						'Content-Type': 'application/json',
-					},
-					body: JSON.stringify({
-						items: [
-							{
-								name: customerDetails.name,
-								description: 'Service description',
-								price: customerDetails.price,
-								quantity: customerDetails.quantity,
-							},
-						],
-						// successUrl: window.location.origin + '/_pages/success',
-						// cancelUrl: window.location.origin + '/_pages/cancel',
-					}),
-				});
+// 		const response = await fetch(endPoint, {
+// 			method: 'POST',
+// 			headers: {
+// 				'Content-Type': 'application/x-www-form-urlencoded',
+// 			},
+// 		});
+// 	});
+// };
 
-				if (!response.ok) {
-					throw new Error('Network response was not ok');
-				}
-
-				const { sessionId, error } = await response.json();
-				if (error) {
-					console.error('Error from server:', error);
-					alert('Error: ' + error);
-					return;
-				}
-
-				const stripe = Stripe('your-publishable-key-here');
-				stripe.redirectToCheckout({ sessionId });
-			} catch (error) {
-				console.error('Error:', error);
-				alert('An error occurred while creating the checkout session.');
-			}
-		});
-	}
-};
-
-export { pTrigger };
+export { handleRadioChange };

@@ -4,10 +4,11 @@ import { showHideNav } from './menu-interaction';
 import { checkAvailFunct } from './ride-availability';
 import { animateOnScroll } from './scrollAnimation';
 import { storeUserDetails } from './handleForm';
-import { pTrigger } from './payment';
+import { handleRadioChange, pTrigger } from './payment';
 
 showHideNav();
 // checkAvailFunct();
 animateOnScroll();
-storeUserDetails();
-pTrigger();
+// storeUserDetails();
+// pTrigger();
+handleRadioChange();

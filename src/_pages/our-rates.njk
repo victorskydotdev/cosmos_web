@@ -49,7 +49,7 @@ layout: base.njk
 
 		<!-- booking form -->
 		<form
-			action="/_pages/payment"
+			action="/.netlify/functions/createCheckoutSession"
 			method="POST"
 			class="booking-form"
 			id="rates">
@@ -65,18 +65,18 @@ layout: base.njk
 							id="first-name"
 							placeholder="First Name"
 							class="name-input"
-							name="first-name"
+							name="firstname"
 							required />
 					</div>
 
 					<div class="last-name">
-						<label for="last-name">Last name</label>
+						<label for="lastname">Last name</label>
 						<input
 							type="text"
 							id="last-name"
 							placeholder="Last Name"
 							class="name-input"
-							name="last-name"
+							name="lastname"
 							required />
 					</div>
 				</div>
@@ -110,7 +110,7 @@ layout: base.njk
 						<div class="wrap">
 							<label for="ride-service">Select Ride Service</label>
 
-							<select name="ride-intent" class="ride-intent" id="ride-service">
+							<select name="rideintent" class="ride-intent" id="ride-service">
 								<option value="prom">Prom & Homecoming</option>
 								<option value="bachelor-party">
 									Bachelor & Bachelorette Party
@@ -128,7 +128,7 @@ layout: base.njk
 							<input
 								type="number"
 								class="quantity-input"
-								name="number-of-riders"
+								name="numberofriders"
 								id="quantity"
 								placeholder="3"
 								required />
@@ -136,15 +136,29 @@ layout: base.njk
 					</div>
 
 					<div class="ride-duration-wrap">
-						<label for="ride-duration">Ride duration/hours</label>
+						<label class="ride-duration-label" for="ride-duration"
+							>Select ride duration</label
+						>
 
-						<input
-							type="number"
-							class="name-input"
-							name="ride-duration"
-							placeholder="4"
-							id="duration"
-							required />
+						{% if prices.length %}
+						<ul class="ride-duration-wrap">
+							{% for price in prices %}
+							<div class="duration-element">
+								<label for="{{ price.product.name }}">{{
+									price.product.name
+								}}</label>
+
+								<input
+									type="radio"
+									value="{{ price.id }}"
+									name="rideDuration"
+									class="product-price" />
+
+								<div class="input-box"></div>
+							</div>
+							{% endfor %}
+						</ul>
+						{% endif %}
 					</div>
 
 					<div class="date-time-wrap">
@@ -154,7 +168,7 @@ layout: base.njk
 								type="date"
 								id="date"
 								class="date-input"
-								name="ride-date"
+								name="ridedate"
 								placeholder=""
 								required />
 						</div>
@@ -165,13 +179,18 @@ layout: base.njk
 								type="text"
 								id="time"
 								class="time-input"
-								name="ride-time"
+								name="ridetime"
 								placeholder="03:00PM"
 								required />
 						</div>
 					</div>
 
-					<input type="text" id="price" hidden value="125" />
+					<input
+						name="priceId"
+						class="price-id"
+						id="price"
+						type="hidden"
+						value="" />
 				</div>
 			</div>
 
@@ -183,3 +202,6 @@ layout: base.njk
 	</div>
 </section>
 <!-- end of booking section -->
+
+<!-- {{ prices | log }} -->
+{% for price in data.prices %} {% endfor %}

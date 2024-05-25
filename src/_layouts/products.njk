@@ -1,0 +1,11 @@
+{% if prices.length %}
+<ul>
+	{% for price in prices %}
+	<li>
+		<label for="priceId">Price ID:</label>
+		<input type="text" id="priceId" value="{{ price.id }}" />
+	</li>
+	{% endfor %}
+</ul>
+
+{% endif %}

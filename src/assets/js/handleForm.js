@@ -24,6 +24,7 @@ const storeUserDetails = () => {
 				duration: rideDuration,
 				rideDate: rideStartDate,
 				rideTime: rideStartTime,
+				productId: generateProductId(),
 			};
 
 			sessionStorage.setItem(
@@ -31,7 +32,7 @@ const storeUserDetails = () => {
 				JSON.stringify(customerDetails)
 			);
 
-			window.location.href = '/_pages/payment';
+			// window.location.href = '/_pages/payment';
 		});
 	} else console.log('other processes running');
 };

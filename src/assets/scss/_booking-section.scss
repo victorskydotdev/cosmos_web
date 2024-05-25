@@ -181,6 +181,53 @@
 
 					.ride-duration-wrap {
 						margin-bottom: 1.3em;
+
+						.ride-duration-label {
+							margin-bottom: 1em;
+							display: block;
+						}
+
+						.ride-duration-wrap {
+							display: flex;
+							gap: 1em;
+							flex-wrap: wrap;
+
+							.duration-element {
+								display: flex;
+								align-items: center;
+								position: relative;
+							}
+
+							.duration-element label {
+								white-space: nowrap;
+								position: relative;
+								z-index: 3;
+								padding: 1em;
+							}
+
+							.duration-element input {
+								position: absolute;
+								height: 100%;
+								width: 100%;
+								opacity: 0;
+								z-index: 3;
+								cursor: pointer;
+							}
+
+							.input-box {
+								height: 100%;
+								width: 100%;
+								border: solid 2px teal;
+								position: absolute;
+								z-index: 1;
+								border-radius: 5px;
+							}
+
+							input:checked + .input-box {
+								background: teal;
+								border-radius: 5px;
+							}
+						}
 					}
 				}
 			}

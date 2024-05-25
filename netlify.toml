@@ -1,4 +1,3 @@
 [build]
-  
-functions = "netlify/functions"
-publish = "dist"
+  functions = "/netlify/functions"
+  publish = "dist"
