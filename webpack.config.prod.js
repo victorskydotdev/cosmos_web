@@ -16,17 +16,19 @@ module.exports = merge(common, {
 		],
 	},
 
-	plugins: [new MiniCssExtractPlugin({ filename: 'main.css' })],
+	plugins: [new MiniCssExtractPlugin({ filename: '[name].css' })],
 
 	module: {
 		rules: [
 			{
-				test: /\.scss$/,
-				use: [
-					MiniCssExtractPlugin.loader,
-					'css-loader', // step 2, turn css into commonJS
-					'sass-loader', // this happens first and turns sass files into css
-				],
+				// test: /\.scss$/,
+				// use: [
+				// 	MiniCssExtractPlugin.loader,
+				// 	'css-loader', // step 2, turn css into commonJS
+				// 	'sass-loader', // this happens first and turns sass files into css
+				// ],
+				test: /\.(sa|sc|c)ss$/,
+				use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
 			},
 		],
 	},

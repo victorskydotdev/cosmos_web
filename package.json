@@ -24,6 +24,7 @@
 		"@babel/preset-env": "^7.24.5",
 		"css-loader": "6.10.0",
 		"dotenv-webpack": "8.1.0",
+		"file-loader": "^6.2.0",
 		"mini-css-extract-plugin": "2.8.1",
 		"netlify-cli": "^17.23.5",
 		"sass": "1.71.1",

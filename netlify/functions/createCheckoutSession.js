@@ -22,7 +22,7 @@ exports.handler = async function (event, context) {
 			},
 		],
 		mode: 'payment',
-		success_url: 'https://www.cosmoscoaches.com',
+		success_url: 'https://www.cosmoscoaches.com/_pages/thank-you',
 		cancel_url: referer,
 	});
 
