@@ -7,11 +7,14 @@ exports.handler = async function (event, context) {
 	const params = new URLSearchParams(event.body);
 	const price_id = params.get('priceId');
 
-	// const firstName = params.get;
-	// const lastName = params.get;
-	// const userName = `${firstName} ${lastName}`;
-	// const userPhone = params.get;
-	// const userEmail = params.get;
+	const firstName = params.get('firstname');
+	const lastName = params.get('lastname');
+	const userName = `${firstName} ${lastName}`;
+	const userPhone = params.get('phone');
+	const rideIntent = params.get('rideintent');
+	const numOfRiders = params.get('numberofriders');
+	const startDate = params.get('ridedate');
+	const starttime = params.get('ridetime');
 
 	const session = await stripe.checkout.sessions.create({
 		line_items: [
@@ -23,6 +26,18 @@ exports.handler = async function (event, context) {
 		mode: 'payment',
 		success_url: 'https://www.cosmoscoaches.com/_pages/thank-you',
 		cancel_url: referer,
+
+		// metadata
+		payment_intent_data: {
+			metadata: {
+				userName: userName,
+				userPhone: userPhone,
+				rideIntent: rideIntent,
+				numOfRiders: numOfRiders,
+				rideStartDate: startDate,
+				rideStarttime: starttime,
+			},
+		},
 	});
 
 	return {
