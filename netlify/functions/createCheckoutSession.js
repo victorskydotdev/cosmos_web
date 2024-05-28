@@ -17,6 +17,7 @@ exports.handler = async function (event, context) {
 	const numOfRiders = params.get('numberofriders');
 	const startDate = params.get('ridedate');
 	const starttime = params.get('ridetime');
+	// const riderPickupLocation = params.get("pickuplocation")
 
 	const session = await stripe.checkout.sessions.create({
 		line_items: [
