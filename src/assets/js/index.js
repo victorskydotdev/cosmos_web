@@ -7,8 +7,5 @@ import { storeUserDetails } from './handleForm';
 import { handleRadioChange, pTrigger } from './payment';
 
 showHideNav();
-// checkAvailFunct();
 animateOnScroll();
-// storeUserDetails();
-// pTrigger();
 handleRadioChange();
