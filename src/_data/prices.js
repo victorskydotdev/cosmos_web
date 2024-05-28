@@ -1,7 +1,7 @@
 // const environment = process.env.BLOCK_CODE_PW;
 // const key = environment;
 const stripe = require('stripe')(
-	'sk_test_51PE5NqP1gBFRxfeqyFlI42bpS5NyVWIVmSYrQsaTHbnMwWZEkSOOIu3iskMOq6FSM0fP09ax6rLx8EiMTphrfm8v0018VfjZ4c'
+	'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'
 );
 
 // console.log(key);
