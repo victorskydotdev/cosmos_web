@@ -1,11 +1,13 @@
 exports.handler = async function (event, context) {
-	const apiKey = process.env.BLOCK_CODE_PW;
+	const apiKey = process.env.SECRET;
 	const stripe = require('stripe')(apiKey);
 
 	const referer = event.headers.referer;
 
 	const params = new URLSearchParams(event.body);
 	const price_id = params.get('priceId');
+
+	console.log(params);
 
 	const firstName = params.get('firstname');
 	const lastName = params.get('lastname');
