@@ -5,7 +5,14 @@
 	margin-bottom: 7em;
 	padding-top: 10em;
 	overflow-x: hidden;
-	background: url('/dist/images/bg.jpg') center/cover, no-repeat;
+	position: relative;
+
+	.position-img-bg {
+		position: absolute;
+		width: 100%;
+		top: 0;
+		height: 100%;
+	}
 
 	.container {
 		@include widthMixin();

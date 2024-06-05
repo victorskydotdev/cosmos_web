@@ -83,18 +83,25 @@
 
 			.card {
 				width: 100%;
+				min-height: 500px;
 
-				&:nth-child(2) {
-					margin-top: -2em;
-				}
+				scroll-margin: 0;
 
-				&:nth-child(4) {
-					margin-top: -2.8em;
-				}
+				// &:nth-child(2) {
+				// 	margin-top: -2em;
+				// }
 
-				&:nth-child(5) {
-					margin-top: -12.5em;
-				}
+				// &:nth-child(4) {
+				// 	margin-top: -1em;
+				// }
+
+				// &:nth-child(5) {
+				// 	margin-top: -12.5em;
+				// }
+			}
+
+			.card::-webkit-scrollbar {
+				display: none;
 			}
 		}
 	}
