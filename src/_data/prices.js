@@ -1,4 +1,7 @@
+require('dotenv').config();
+
 const apiKey = process.env.SECRET;
+console.log(`API Key: ${apiKey ? 'Exists' : 'Does not exist'}`);
 
 const stripe = require('stripe')(apiKey);
 

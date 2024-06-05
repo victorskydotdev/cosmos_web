@@ -8,4 +8,10 @@ module.exports = {
 		// Where webpack will compile the assets
 		path: path.resolve(__dirname, 'src/compiled-assets'),
 	},
+
+	plugins: [
+		new Dotenv({
+			systemvars: true,
+		}),
+	],
 };
